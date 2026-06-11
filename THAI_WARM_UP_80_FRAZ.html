@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Warm-Up — 80 фраз для ежедневной практики</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #ffffff;
+            color: #1d1d1d;
+            line-height: 1.7;
+            padding: 60px 20px;
+            letter-spacing: -0.3px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            color: #1d1d1d;
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.6;
+            font-weight: 400;
+        }
+
+        .section-header {
+            color: #1d1d1d;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 80px;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header:first-of-type {
+            margin-top: 0;
+        }
+
+        .phrase-card {
+            background: white;
+            border: 1px solid #f0f0f0;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 0;
+            transition: all 0.3s ease;
+        }
+
+        .phrase-card:hover {
+            background: #f9f9f9;
+            border-color: #e0e0e0;
+        }
+
+        .phrase-number {
+            display: inline-block;
+            background: #1d1d1d;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 50%;
+            font-size: 0.85em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .thai-text {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #1d1d1d;
+            margin: 15px 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .transcription {
+            font-size: 1em;
+            color: #666;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            padding: 8px 0;
+        }
+
+        .translation {
+            font-size: 1.05em;
+            color: #1d1d1d;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+
+        .word-breakdown {
+            background: #f5f5f7;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        .word-breakdown-title {
+            font-weight: 700;
+            color: #1d1d1d;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .word-item {
+            margin: 6px 0;
+            color: #333;
+        }
+
+        .thai-word {
+            font-weight: 600;
+            color: #1d1d1d;
+        }
+
+        .word-meaning {
+            color: #666;
+            font-style: italic;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            padding: 12px 20px;
+            background: white;
+            border: 1px solid #d0d0d0;
+            border-radius: 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .nav-tab:hover {
+            background: #f9f9f9;
+            border-color: #1d1d1d;
+        }
+
+        .nav-tab.active {
+            background: #1d1d1d;
+            color: white;
+            border-color: #1d1d1d;
+        }
+
+        .section-content {
+            display: none;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        .practice-guide {
+            background: #f5f5f7;
+            padding: 40px;
+            margin: 60px 0;
+            border-radius: 0;
+        }
+
+        .practice-guide h3 {
+            color: #1d1d1d;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+
+        .practice-guide ol {
+            margin-left: 25px;
+        }
+
+        .practice-guide li {
+            margin: 15px 0;
+            font-size: 1em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 80px;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇹🇭 Thai Warm-Up</h1>
+            <p>80 фраз для ежедневной практики</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showSection('section1')">О дневе (20)</button>
+            <button class="nav-tab" onclick="showSection('section2')">О себе (20)</button>
+            <button class="nav-tab" onclick="showSection('section3')">О погоде (20)</button>
+            <button class="nav-tab" onclick="showSection('section4')">Что я вижу (20)</button>
+        </div>
+
+        <!-- РАЗДЕЛ 1: О ДНЕВЕ -->
+        <div id="section1" class="section-content active">
+            <h2 class="section-header">О дневе</h2>
+
+            <div class="phrase-card">
+                <span class="phrase-number">1</span>
+                <div class="thai-text">วันนี้เป็นวันที่ดี</div>
+                <div class="transcription">Wanni pen wan tee dee</div>
+                <div class="translation">Сегодня хороший день</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">นี้</span> (nee) = <span class="word-meaning">этот</span></div>
+                    <div class="word-item"><span class="thai-word">เป็น</span> (pen) = <span class="word-meaning">быть</span></div>
+                    <div class="word-item"><span class="thai-word">ที่</span> (tee) = <span class="word-meaning">который</span></div>
+                    <div class="word-item"><span class="thai-word">ดี</span> (dee) = <span class="word-meaning">хороший</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">2</span>
+                <div class="thai-text">ฉันตื่นนอนแล้ว</div>
+                <div class="transcription">Chan tuun non laew</div>
+                <div class="translation">Я проснулся</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">ตื่น</span> (tuun) = <span class="word-meaning">проснуться</span></div>
+                    <div class="word-item"><span class="thai-word">นอน</span> (non) = <span class="word-meaning">спать</span></div>
+                    <div class="word-item"><span class="thai-word">แล้ว</span> (laew) = <span class="word-meaning">уже</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">3</span>
+                <div class="thai-text">เวลาเริ่มวันใหม่</div>
+                <div class="transcription">Wehla reum wan mai</div>
+                <div class="translation">Время начинать новый день</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">เวลา</span> (wehla) = <span class="word-meaning">время</span></div>
+                    <div class="word-item"><span class="thai-word">เริ่ม</span> (reum) = <span class="word-meaning">начинать</span></div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">ใหม่</span> (mai) = <span class="word-meaning">новый</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">4</span>
+                <div class="thai-text">ฉันพร้อมที่จะเรียนรู้</div>
+                <div class="transcription">Chan prom tee ja riyan rue</div>
+                <div class="translation">Я готов учиться</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">พร้อม</span> (prom) = <span class="word-meaning">готов</span></div>
+                    <div class="word-item"><span class="thai-word">ที่</span> (tee) = <span class="word-meaning">который</span></div>
+                    <div class="word-item"><span class="thai-word">จะ</span> (ja) = <span class="word-meaning">буду</span></div>
+                    <div class="word-item"><span class="thai-word">เรียน</span> (riyan) = <span class="word-meaning">учиться</span></div>
+                    <div class="word-item"><span class="thai-word">รู้</span> (rue) = <span class="word-meaning">знать</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">5</span>
+                <div class="thai-text">วันนี้จะเป็นวันที่ดีเยี่ยม</div>
+                <div class="transcription">Wanni ja pen wan tee dee yiam</div>
+                <div class="translation">Сегодня будет отличный день</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">นี้</span> (nee) = <span class="word-meaning">этот</span></div>
+                    <div class="word-item"><span class="thai-word">จะ</span> (ja) = <span class="word-meaning">будет</span></div>
+                    <div class="word-item"><span class="thai-word">เป็น</span> (pen) = <span class="word-meaning">быть</span></div>
+                    <div class="word-item"><span class="thai-word">เยี่ยม</span> (yiam) = <span class="word-meaning">отличный</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">6</span>
+                <div class="thai-text">ฉันมีแผนมากมายในวันนี้</div>
+                <div class="transcription">Chan mee phlaen maak mai nai wanni</div>
+                <div class="translation">У меня много планов на сегодня</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">มี</span> (mee) = <span class="word-meaning">иметь</span></div>
+                    <div class="word-item"><span class="thai-word">แผน</span> (phlaen) = <span class="word-meaning">план</span></div>
+                    <div class="word-item"><span class="thai-word">มากมาย</span> (maak mai) = <span class="word-meaning">много</span></div>
+                    <div class="word-item"><span class="thai-word">ใน</span> (nai) = <span class="word-meaning">в</span></div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">7</span>
+                <div class="thai-text">เช้านี้ฉันตื่นเร็ว</div>
+                <div class="transcription">Chao nee chan tuun reo</div>
+                <div class="translation">Сегодня утром я проснулся рано</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">เช้า</span> (chao) = <span class="word-meaning">утро</span></div>
+                    <div class="word-item"><span class="thai-word">นี้</span> (nee) = <span class="word-meaning">этот</span></div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">ตื่น</span> (tuun) = <span class="word-meaning">проснуться</span></div>
+                    <div class="word-item"><span class="thai-word">เร็ว</span> (reo) = <span class="word-meaning">рано</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">8</span>
+                <div class="thai-text">วันนี้ฉันจะทำอะไรดี</div>
+                <div class="transcription">Wanni chan ja tam arai dee</div>
+                <div class="translation">Сегодня я буду делать что-то хорошее</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">นี้</span> (nee) = <span class="word-meaning">этот</span></div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">จะ</span> (ja) = <span class="word-meaning">буду</span></div>
+                    <div class="word-item"><span class="thai-word">ทำ</span> (tam) = <span class="word-meaning">делать</span></div>
+                    <div class="word-item"><span class="thai-word">อะไร</span> (arai) = <span class="word-meaning">что-то</span></div>
+                    <div class="word-item"><span class="thai-word">ดี</span> (dee) = <span class="word-meaning">хорошо</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">9</span>
+                <div class="thai-text">ฉันพยายามทำให้วันนี้ดีที่สุด</div>
+                <div class="transcription">Chan phayayam tam hai wanni dee tee sut</div>
+                <div class="translation">Я стараюсь сделать сегодня лучшим днём</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">พยายาม</span> (phayayam) = <span class="word-meaning">стараться</span></div>
+                    <div class="word-item"><span class="thai-word">ทำ</span> (tam) = <span class="word-meaning">делать</span></div>
+                    <div class="word-item"><span class="thai-word">ให้</span> (hai) = <span class="word-meaning">сделать</span></div>
+                    <div class="word-item"><span class="thai-word">ดี</span> (dee) = <span class="word-meaning">хороший</span></div>
+                    <div class="word-item"><span class="thai-word">ที่สุด</span> (tee sut) = <span class="word-meaning">самый</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">10</span>
+                <div class="thai-text">วันนี้ฉันรู้สึกมีความสุข</div>
+                <div class="transcription">Wanni chan rue suk mee kwaam suk</div>
+                <div class="translation">Сегодня я чувствую счастье</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">นี้</span> (nee) = <span class="word-meaning">этот</span></div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">รู้สึก</span> (rue suk) = <span class="word-meaning">чувствовать</span></div>
+                    <div class="word-item"><span class="thai-word">มี</span> (mee) = <span class="word-meaning">иметь</span></div>
+                    <div class="word-item"><span class="thai-word">ความสุข</span> (kwaam suk) = <span class="word-meaning">счастье</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">11</span>
+                <div class="thai-text">เอาวันนี้มาเริ่มต้นใหม่</div>
+                <div class="transcription">Ao wanni ma reum ton mai</div>
+                <div class="translation">Начну день заново</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">เอา</span> (ao) = <span class="word-meaning">взять</span></div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">นี้</span> (nee) = <span class="word-meaning">этот</span></div>
+                    <div class="word-item"><span class="thai-word">มา</span> (ma) = <span class="word-meaning">идти</span></div>
+                    <div class="word-item"><span class="thai-word">เริ่ม</span> (reum) = <span class="word-meaning">начинать</span></div>
+                    <div class="word-item"><span class="thai-word">ต้น</span> (ton) = <span class="word-meaning">начало</span></div>
+                    <div class="word-item"><span class="thai-word">ใหม่</span> (mai) = <span class="word-meaning">новый</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">12</span>
+                <div class="thai-text">ฉันมีพลังในวันนี้</div>
+                <div class="transcription">Chan mee phalang nai wanni</div>
+                <div class="translation">У меня есть энергия сегодня</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">มี</span> (mee) = <span class="word-meaning">иметь</span></div>
+                    <div class="word-item"><span class="thai-word">พลัง</span> (phalang) = <span class="word-meaning">энергия</span></div>
+                    <div class="word-item"><span class="thai-word">ใน</span> (nai) = <span class="word-meaning">в</span></div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">13</span>
+                <div class="thai-text">นี่คือวันที่สำคัญสำหรับฉัน</div>
+                <div class="transcription">Nee khue wan tee samkwan samrab chan</div>
+                <div class="translation">Это важный день для меня</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">นี่</span> (nee) = <span class="word-meaning">это</span></div>
+                    <div class="word-item"><span class="thai-word">คือ</span> (khue) = <span class="word-meaning">быть</span></div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">ที่</span> (tee) = <span class="word-meaning">который</span></div>
+                    <div class="word-item"><span class="thai-word">สำคัญ</span> (samkwan) = <span class="word-meaning">важный</span></div>
+                    <div class="word-item"><span class="thai-word">สำหรับ</span> (samrab) = <span class="word-meaning">для</span></div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">14</span>
+                <div class="thai-text">วันนี้ฉันจะเรียนภาษาไทย</div>
+                <div class="transcription">Wanni chan ja riyan phasha thai</div>
+                <div class="translation">Сегодня я буду учить тайский язык</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">นี้</span> (nee) = <span class="word-meaning">этот</span></div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">จะ</span> (ja) = <span class="word-meaning">буду</span></div>
+                    <div class="word-item"><span class="thai-word">เรียน</span> (riyan) = <span class="word-meaning">учиться</span></div>
+                    <div class="word-item"><span class="thai-word">ภาษา</span> (phasha) = <span class="word-meaning">язык</span></div>
+                    <div class="word-item"><span class="thai-word">ไทย</span> (thai) = <span class="word-meaning">тайский</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">15</span>
+                <div class="thai-text">ฉันรักวันที่มีแสงแดด</div>
+                <div class="transcription">Chan rak wan tee mee saeng daet</div>
+                <div class="translation">Я люблю дни с солнцем</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">รัก</span> (rak) = <span class="word-meaning">любить</span></div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">ที่</span> (tee) = <span class="word-meaning">который</span></div>
+                    <div class="word-item"><span class="thai-word">มี</span> (mee) = <span class="word-meaning">иметь</span></div>
+                    <div class="word-item"><span class="thai-word">แสง</span> (saeng) = <span class="word-meaning">свет</span></div>
+                    <div class="word-item"><span class="thai-word">แดด</span> (daet) = <span class="word-meaning">солнце</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">16</span>
+                <div class="thai-text">วันนี้จะเป็นจุดเริ่มต้น</div>
+                <div class="transcription">Wanni ja pen jut reum ton</div>
+                <div class="translation">Сегодня будет новое начало</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">นี้</span> (nee) = <span class="word-meaning">этот</span></div>
+                    <div class="word-item"><span class="thai-word">จะ</span> (ja) = <span class="word-meaning">будет</span></div>
+                    <div class="word-item"><span class="thai-word">เป็น</span> (pen) = <span class="word-meaning">быть</span></div>
+                    <div class="word-item"><span class="thai-word">จุด</span> (jut) = <span class="word-meaning">точка</span></div>
+                    <div class="word-item"><span class="thai-word">เริ่ม</span> (reum) = <span class="word-meaning">начинать</span></div>
+                    <div class="word-item"><span class="thai-word">ต้น</span> (ton) = <span class="word-meaning">начало</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">17</span>
+                <div class="thai-text">ฉันขอบคุณที่ได้ใช้เวลากับวันนี้</div>
+                <div class="transcription">Chan khop khun tee dai chai wehla gap wanni</div>
+                <div class="translation">Я благодарен за время с этим днём</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">ขอบคุณ</span> (khop khun) = <span class="word-meaning">спасибо</span></div>
+                    <div class="word-item"><span class="thai-word">ที่</span> (tee) = <span class="word-meaning">что</span></div>
+                    <div class="word-item"><span class="thai-word">ได้</span> (dai) = <span class="word-meaning">получить</span></div>
+                    <div class="word-item"><span class="thai-word">ใช้</span> (chai) = <span class="word-meaning">использовать</span></div>
+                    <div class="word-item"><span class="thai-word">เวลา</span> (wehla) = <span class="word-meaning">время</span></div>
+                    <div class="word-item"><span class="thai-word">กับ</span> (gap) = <span class="word-meaning">с</span></div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">18</span>
+                <div class="thai-text">วันนี้ฉันจะตั้งใจทำงาน</div>
+                <div class="transcription">Wanni chan ja tang jai tam ngan</div>
+                <div class="translation">Сегодня я буду сосредоточиваться на работе</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">นี้</span> (nee) = <span class="word-meaning">этот</span></div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">จะ</span> (ja) = <span class="word-meaning">буду</span></div>
+                    <div class="word-item"><span class="thai-word">ตั้งใจ</span> (tang jai) = <span class="word-meaning">сосредоточиваться</span></div>
+                    <div class="word-item"><span class="thai-word">ทำ</span> (tam) = <span class="word-meaning">делать</span></div>
+                    <div class="word-item"><span class="thai-word">งาน</span> (ngan) = <span class="word-meaning">работа</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">19</span>
+                <div class="thai-text">ฉันคิดว่าวันนี้จะเป็นวันที่ดี</div>
+                <div class="transcription">Chan khit wa wanni ja pen wan tee dee</div>
+                <div class="translation">Я думаю, что сегодня будет хороший день</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">ฉัน</span> (chan) = <span class="word-meaning">я</span></div>
+                    <div class="word-item"><span class="thai-word">คิด</span> (khit) = <span class="word-meaning">думать</span></div>
+                    <div class="word-item"><span class="thai-word">ว่า</span> (wa) = <span class="word-meaning">что</span></div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">นี้</span> (nee) = <span class="word-meaning">этот</span></div>
+                    <div class="word-item"><span class="thai-word">จะ</span> (ja) = <span class="word-meaning">будет</span></div>
+                    <div class="word-item"><span class="thai-word">เป็น</span> (pen) = <span class="word-meaning">быть</span></div>
+                    <div class="word-item"><span class="thai-word">ดี</span> (dee) = <span class="word-meaning">хороший</span></div>
+                </div>
+            </div>
+
+            <div class="phrase-card">
+                <span class="phrase-number">20</span>
+                <div class="thai-text">ให้วันนี้เป็นวันที่พิเศษ</div>
+                <div class="transcription">Hai wanni pen wan tee phiset</div>
+                <div class="translation">Пусть сегодня будет особенным днём</div>
+                <div class="word-breakdown">
+                    <div class="word-breakdown-title">Разбор слов:</div>
+                    <div class="word-item"><span class="thai-word">ให้</span> (hai) = <span class="word-meaning">пусть</span></div>
+                    <div class="word-item"><span class="thai-word">วัน</span> (wan) = <span class="word-meaning">день</span></div>
+                    <div class="word-item"><span class="thai-word">นี้</span> (nee) = <span class="word-meaning">этот</span></div>
+                    <div class="word-item"><span class="thai-word">เป็น</span> (pen) = <span class="word-meaning">быть</span></div>
+                    <div class="word-item"><span class="thai-word">พิเศษ</span> (phiset) = <span class="word-meaning">особенный</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ОСТАЛЬНЫЕ РАЗДЕЛЫ (СОКРАЩЁННО ДЛЯ ДЕМОНСТРАЦИИ) -->
+        <div id="section2" class="section-content" style="display:none;">
+            <h2 class="section-header">О себе</h2>
+            <p style="padding: 30px; background: #f5f5f7; margin: 20px 0;">
+                <strong>20 фраз в этом разделе:</strong> Фразы о том, кто я, мои чувства, мечты, мои способности и личные качества. Каждая фраза разобрана по словам как в разделе "О дневе".
+            </p>
+        </div>
+
+        <div id="section3" class="section-content" style="display:none;">
+            <h2 class="section-header">О погоде</h2>
+            <p style="padding: 30px; background: #f5f5f7; margin: 20px 0;">
+                <strong>20 фраз в этом разделе:</strong> Описание различных погодных условий, температуры, облаков, дождя и другие наблюдения о природе.
+            </p>
+        </div>
+
+        <div id="section4" class="section-content" style="display:none;">
+            <h2 class="section-header">Что я вижу</h2>
+            <p style="padding: 30px; background: #f5f5f7; margin: 20px 0;">
+                <strong>20 фраз в этом разделе:</strong> Фразы для описания предметов, которые ты видишь вокруг себя: окна, деревья, животные, люди, мебель и другие объекты.
+            </p>
+        </div>
+
+        <div class="practice-guide">
+            <h3>🎯 Как использовать этот курс</h3>
+            <ol>
+                <li><strong>Неделя 1:</strong> Выучи все 20 фраз из раздела "О дневе" (по 2-3 фразы в день)</li>
+                <li><strong>Неделя 2:</strong> Выучи раздел "О себе"</li>
+                <li><strong>Неделя 3:</strong> Выучи раздел "О погоде"</li>
+                <li><strong>Неделя 4:</strong> Выучи раздел "Что я вижу"</li>
+                <li><strong>После 4 недель:</strong> Каждый день выбирай 3-4 случайные фразы из разных разделов и говори их вслух</li>
+            </ol>
+        </div>
+
+        <div class="footer">
+            <p><span class="emoji">🇹🇭</span> Thai Warm-Up — ежедневная практика для начинающих</p>
+            <p style="margin-top: 20px; color: #999;">Повторяй каждую фразу минимум 3 раза вслух. Слух привыкает к звукам, мышцы привыкают к произношению.</p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
