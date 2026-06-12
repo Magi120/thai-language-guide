@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Core Speaking Foundations — Thai Language</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #FAF8F4; --cream2: #F4F1EB; --white: #FFFFFF;
+    --gold: #B8976A; --gold-light: #E8D9C0;
+    --text: #1D1D1F; --text-secondary: #6E6E73; --text-light: #A1A1A6;
+    --border: #E8E3DA;
+    --shadow: 0 4px 30px rgba(0,0,0,0.06);
+    --shadow-hover: 0 12px 50px rgba(0,0,0,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,248,244,0.85); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px; height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  nav .logo { font-size: 15px; font-weight: 600; letter-spacing: -0.3px; }
+  nav .logo span { color: var(--gold); }
+  nav .nav-links { display: flex; gap: 32px; }
+  nav .nav-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+  nav .nav-links a:hover { color: var(--gold); }
+
+  .hero { padding: 110px 40px 70px; max-width: 900px; margin: 0 auto; text-align: center; }
+  .badge { display: inline-block; background: var(--gold-light); color: var(--gold); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 28px; }
+  .hero h1 { font-size: clamp(40px, 6vw, 68px); font-weight: 700; letter-spacing: -2px; line-height: 1.05; margin-bottom: 22px; }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+  .hero p { font-size: 18px; color: var(--text-secondary); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+  .divider { width: 60px; height: 1px; background: var(--gold); margin: 70px auto; opacity: 0.4; }
+
+  .section { max-width: 960px; margin: 0 auto; padding: 0 40px 80px; }
+  .section-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .section-title { font-size: clamp(26px, 4vw, 42px); font-weight: 700; letter-spacing: -1px; margin-bottom: 14px; line-height: 1.15; }
+  .section-desc { font-size: 17px; color: var(--text-secondary); max-width: 600px; line-height: 1.7; margin-bottom: 44px; }
+
+  /* RULES */
+  .rules-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 60px; }
+  .rule-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 28px; box-shadow: var(--shadow); transition: box-shadow 0.3s, transform 0.3s; }
+  .rule-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+  .rule-num { font-size: 13px; font-weight: 700; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+  .rule-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 10px; letter-spacing: -0.3px; }
+  .rule-body { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+  .rule-body strong { color: var(--text); }
+  .rule-example { margin-top: 14px; padding: 12px 14px; background: var(--cream2); border-radius: 10px; font-size: 13px; color: var(--text-secondary); font-style: italic; }
+
+  /* STRUCTURE BLOCKS */
+  .structure-block { background: var(--white); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); margin-bottom: 24px; }
+  .structure-header { padding: 24px 28px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; }
+  .structure-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--gold-light); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .structure-header-text h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 3px; }
+  .structure-header-text p { font-size: 13px; color: var(--text-secondary); }
+  .formula-bar { margin: 0 28px 0; padding: 12px 16px; background: var(--cream2); border-radius: 10px; font-size: 13px; color: var(--gold); font-weight: 600; border-left: 3px solid var(--gold); }
+  .formula-bar + .formula-bar { margin-top: 8px; }
+
+  /* PHRASE TABLE */
+  .phrase-table { width: 100%; border-collapse: collapse; }
+  .phrase-table thead tr { border-bottom: 1px solid var(--border); }
+  .phrase-table th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); padding: 14px 28px 12px; }
+  .phrase-table td { padding: 13px 28px; font-size: 14px; border-top: 1px solid var(--border); vertical-align: top; }
+  .phrase-table td:first-child { font-size: 15px; font-weight: 600; color: var(--text); letter-spacing: -0.2px; }
+  .phrase-table td:nth-child(2) { color: var(--gold); font-style: italic; }
+  .phrase-table td:nth-child(3) { color: var(--text-secondary); }
+  .phrase-table td:nth-child(4) { color: var(--text-light); font-size: 13px; font-style: italic; }
+  .phrase-table tr:last-child td { padding-bottom: 22px; }
+
+  /* PHRASE BANK */
+  .phrase-bank-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 20px; }
+  .phrase-bank-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); }
+  .phrase-bank-card .card-title { padding: 20px 24px 16px; font-size: 16px; font-weight: 700; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+  .phrase-bank-card .card-title .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+  /* QUESTION WORDS */
+  .qwords-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; margin-bottom: 48px; }
+  .qword-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; box-shadow: var(--shadow); text-align: center; }
+  .qword-thai { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .qword-phonetic { font-size: 13px; color: var(--gold); margin-bottom: 6px; }
+  .qword-eng { font-size: 13px; color: var(--text-secondary); }
+
+  footer { text-align: center; padding: 60px 40px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-light); }
+  .footer-nav { display: flex; justify-content: center; gap: 40px; margin-bottom: 20px; flex-wrap: wrap; }
+  .footer-nav a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+  .footer-nav a:hover { color: var(--gold); }
+
+  @media(max-width:640px){
+    nav{padding:0 20px;} nav .nav-links{display:none;}
+    .hero{padding:80px 20px 50px;} .section{padding:0 20px 60px;}
+    .phrase-bank-grid{grid-template-columns:1fr;}
+    .phrase-table th,.phrase-table td{padding:12px 16px;}
+    .structure-header{padding:20px 20px 16px;}
+    .formula-bar{margin:0 20px 0;} .formula-bar+.formula-bar{margin-top:8px;}
+    .qwords-grid{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">🇹🇭 Thai&nbsp;<span>Language</span></div>
+  <div class="nav-links">
+    <a href="part1-roadmap.html">Roadmap</a>
+    <a href="part2-foundations.html">Foundations</a>
+    <a href="part3-conversations.html">Conversations</a>
+    <a href="part4-1000words.html">1000 Words</a>
+    <a href="part5-daily.html">Daily Practice</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge">Part 2 — Foundations</div>
+  <h1>The Grammar That<br><em>Actually Matters</em></h1>
+  <p>5 rules, 6 sentence structures, and a complete survival phrase bank. Master these and you can communicate in almost any situation.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- 5 RULES -->
+<div class="section">
+  <div class="section-label">The Essentials</div>
+  <div class="section-title">5 Non-Negotiable<br>Rules of Thai Grammar</div>
+  <p class="section-desc">Thai grammar is remarkably logical. These 5 rules cover the foundation of everything you'll say and hear.</p>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-num">Rule 01</div>
+      <div class="rule-title">No verb conjugation</div>
+      <div class="rule-body">Thai verbs <strong>never change</strong>. "I eat / he eats / they ate / we will eat" = <strong>กิน (gin)</strong> every single time. Time is shown by adding time words, not changing the verb.</div>
+      <div class="rule-example">ผมกิน · คุณกิน · เขากิน — all the same verb</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">Rule 02</div>
+      <div class="rule-title">Subject + Verb + Object</div>
+      <div class="rule-body">Sentence order is the same as English. <strong>ผม + กิน + ข้าว</strong> = I eat rice. Keep this order and you will be understood.</div>
+      <div class="rule-example">ฉัน + ชอบ + อาหารไทย = I like Thai food</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">Rule 03</div>
+      <div class="rule-title">Polite particles end sentences</div>
+      <div class="rule-body">Men add <strong>ครับ (khrap)</strong>. Women add <strong>ค่ะ / คะ (kha)</strong>. These make you sound respectful and natural instantly. Use them constantly.</div>
+      <div class="rule-example">ขอบคุณ<strong>ครับ</strong> · สวัสดี<strong>ค่ะ</strong></div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">Rule 04</div>
+      <div class="rule-title">Negation = ไม่ before the verb</div>
+      <div class="rule-body">Place <strong>ไม่ (mai)</strong> directly before any verb or adjective to negate it. That's the only rule — no tense changes needed.</div>
+      <div class="rule-example">ผมกิน → ผม<strong>ไม่</strong>กิน (I eat → I don't eat)</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">Rule 05</div>
+      <div class="rule-title">Questions use particles</div>
+      <div class="rule-body">Add <strong>ไหม (mai)</strong> at the end for yes/no questions. Use question words (อะไร, ที่ไหน, ใคร…) at the end of the sentence for open questions.</div>
+      <div class="rule-example">คุณชอบ<strong>ไหม</strong>? / คุณชอบ<strong>อะไร</strong>?</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SENTENCE STRUCTURES -->
+<div class="section">
+  <div class="section-label">Master Patterns</div>
+  <div class="section-title">6 Sentence Structures<br>That Cover Everything</div>
+  <p class="section-desc">Learn these 6 patterns and you can build thousands of sentences. Every structure includes a formula and ready-to-use examples.</p>
+
+  <!-- Structure 1 -->
+  <div class="structure-block">
+    <div class="structure-header">
+      <div class="structure-icon">👤</div>
+      <div class="structure-header-text">
+        <h3>Structure 1 — "I am / I am not"</h3>
+        <p>Introduce yourself, describe identity, profession, nationality</p>
+      </div>
+    </div>
+    <div style="padding:16px 0 0">
+      <div class="formula-bar">✦ Subject + เป็น (pen) + noun → "is / am / are"</div>
+      <div class="formula-bar" style="margin-top:8px;">✦ Subject + ไม่ใช่ (mai chai) + noun → "is not / am not"</div>
+    </div>
+    <table class="phrase-table">
+      <thead><tr><th>Thai</th><th>Phonetic</th><th>English</th><th>Word-by-Word</th></tr></thead>
+      <tbody>
+        <tr><td>ผมเป็นคนอเมริกัน</td><td>Phom pen khon Amerika</td><td>I am American</td><td>ผม=I เป็น=am คน=person อเมริกัน=American</td></tr>
+        <tr><td>ฉันเป็นครู</td><td>Chan pen khruu</td><td>I am a teacher</td><td>ฉัน=I เป็น=am ครู=teacher</td></tr>
+        <tr><td>ผมไม่ใช่คนไทย</td><td>Phom mai chai khon Thai</td><td>I am not Thai</td><td>ผม=I ไม่ใช่=am-not คนไทย=Thai-person</td></tr>
+        <tr><td>คุณเป็นใคร?</td><td>Khun pen khrai?</td><td>Who are you?</td><td>คุณ=you เป็น=are ใคร=who</td></tr>
+        <tr><td>เขาเป็นหมอ</td><td>Khao pen mo</td><td>He is a doctor</td><td>เขา=he เป็น=is หมอ=doctor</td></tr>
+        <tr><td>เธอเป็นนักเรียน</td><td>Thoe pen nak rian</td><td>She is a student</td><td>เธอ=she เป็น=is นักเรียน=student</td></tr>
+        <tr><td>ผมเป็นคนรัสเซีย</td><td>Phom pen khon Ratsia</td><td>I am Russian</td><td>ผม=I เป็น=am คน=person รัสเซีย=Russia</td></tr>
+        <tr><td>ฉันไม่ใช่ครู</td><td>Chan mai chai khruu</td><td>I am not a teacher</td><td>ฉัน=I ไม่ใช่=am-not ครู=teacher</td></tr>
+        <tr><td>เราเป็นเพื่อน</td><td>Rao pen phuean</td><td>We are friends</td><td>เรา=we เป็น=are เพื่อน=friends</td></tr>
+        <tr><td>คุณเป็นนักท่องเที่ยวไหม?</td><td>Khun pen nak thong thiao mai?</td><td>Are you a tourist?</td><td>คุณ=you เป็น=are นักท่องเที่ยว=tourist ไหม=question-particle</td></tr>
+        <tr><td>เขาไม่ใช่ผู้จัดการ</td><td>Khao mai chai phu jat kan</td><td>He is not the manager</td><td>เขา=he ไม่ใช่=is-not ผู้จัดการ=manager</td></tr>
+        <tr><td>ฉันเป็นพยาบาล</td><td>Chan pen phayaban</td><td>I am a nurse</td><td>ฉัน=I เป็น=am พยาบาล=nurse</td></tr>
+        <tr><td>ผมเป็นคนใหม่ที่นี่</td><td>Phom pen khon mai thi ni</td><td>I am new here</td><td>ผม=I เป็น=am คน=person ใหม่=new ที่นี่=here</td></tr>
+        <tr><td>นี่เป็นร้านอาหาร</td><td>Ni pen ran ahan</td><td>This is a restaurant</td><td>นี่=this เป็น=is ร้านอาหาร=restaurant</td></tr>
+        <tr><td>นั่นไม่ใช่โรงแรม</td><td>Nan mai chai rong raem</td><td>That is not a hotel</td><td>นั่น=that ไม่ใช่=is-not โรงแรม=hotel</td></tr>
+        <tr><td>คุณเป็นคนที่นี่ไหม?</td><td>Khun pen khon thi ni mai?</td><td>Are you from here?</td><td>คุณ=you เป็น=are คน=person ที่นี่=here ไหม=question-particle</td></tr>
+        <tr><td>เขาเป็นพ่อค้า</td><td>Khao pen pho kha</td><td>He is a merchant</td><td>เขา=he เป็น=is พ่อค้า=merchant</td></tr>
+        <tr><td>ฉันไม่ใช่คนญี่ปุ่น</td><td>Chan mai chai khon Yipun</td><td>I am not Japanese</td><td>ฉัน=I ไม่ใช่=am-not คน=person ญี่ปุ่น=Japan</td></tr>
+        <tr><td>เธอเป็นเพื่อนของผม</td><td>Thoe pen phuean khong phom</td><td>She is my friend</td><td>เธอ=she เป็น=is เพื่อน=friend ของ=of ผม=me</td></tr>
+        <tr><td>ผมเป็นแค่นักท่องเที่ยว</td><td>Phom pen khae nak thong thiao</td><td>I am just a tourist</td><td>ผม=I เป็น=am แค่=just นักท่องเที่ยว=tourist</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Structure 2 -->
+  <div class="structure-block">
+    <div class="structure-header">
+      <div class="structure-icon">🙋</div>
+      <div class="structure-header-text">
+        <h3>Structure 2 — "I want / I need"</h3>
+        <p>Request things, express desires, order food, ask for help</p>
+      </div>
+    </div>
+    <div style="padding:16px 0 0">
+      <div class="formula-bar">✦ Subject + ต้องการ (tong gan) + noun → formal want/need</div>
+      <div class="formula-bar" style="margin-top:8px;">✦ Subject + อยาก (yak) + verb → casual "want to do"</div>
+    </div>
+    <table class="phrase-table">
+      <thead><tr><th>Thai</th><th>Phonetic</th><th>English</th><th>Word-by-Word</th></tr></thead>
+      <tbody>
+        <tr><td>ผมต้องการน้ำ</td><td>Phom tong kan nam</td><td>I need water</td><td>ผม=I ต้องการ=need น้ำ=water</td></tr>
+        <tr><td>ฉันอยากกินข้าว</td><td>Chan yak gin khao</td><td>I want to eat rice</td><td>ฉัน=I อยาก=want กิน=eat ข้าว=rice</td></tr>
+        <tr><td>ผมไม่อยากไป</td><td>Phom mai yak pai</td><td>I don't want to go</td><td>ผม=I ไม่อยาก=don't-want ไป=go</td></tr>
+        <tr><td>คุณอยากได้อะไร?</td><td>Khun yak dai arai?</td><td>What do you want?</td><td>คุณ=you อยาก=want ได้=get อะไร=what</td></tr>
+        <tr><td>ฉันต้องการความช่วยเหลือ</td><td>Chan tong kan khwam chuay luea</td><td>I need help</td><td>ฉัน=I ต้องการ=need ความช่วยเหลือ=help</td></tr>
+        <tr><td>ผมอยากดูหนัง</td><td>Phom yak du nang</td><td>I want to watch a movie</td><td>ผม=I อยาก=want ดู=watch หนัง=movie</td></tr>
+        <tr><td>เขาอยากเรียนภาษาไทย</td><td>Khao yak rian phasa Thai</td><td>He wants to learn Thai</td><td>เขา=he อยาก=wants เรียน=learn ภาษาไทย=Thai-language</td></tr>
+        <tr><td>ฉันต้องการตั๋ว</td><td>Chan tong kan tua</td><td>I need a ticket</td><td>ฉัน=I ต้องการ=need ตั๋ว=ticket</td></tr>
+        <tr><td>ผมอยากนอน</td><td>Phom yak non</td><td>I want to sleep</td><td>ผม=I อยาก=want นอน=sleep</td></tr>
+        <tr><td>คุณต้องการอะไร?</td><td>Khun tong kan arai?</td><td>What do you need?</td><td>คุณ=you ต้องการ=need อะไร=what</td></tr>
+        <tr><td>เธออยากไปเที่ยว</td><td>Thoe yak pai thiao</td><td>She wants to travel</td><td>เธอ=she อยาก=wants ไป=go เที่ยว=travel</td></tr>
+        <tr><td>ผมไม่ต้องการอะไร</td><td>Phom mai tong kan arai</td><td>I don't need anything</td><td>ผม=I ไม่ต้องการ=don't-need อะไร=anything</td></tr>
+        <tr><td>ฉันอยากกินส้มตำ</td><td>Chan yak gin som tam</td><td>I want to eat papaya salad</td><td>ฉัน=I อยาก=want กิน=eat ส้มตำ=papaya-salad</td></tr>
+        <tr><td>ผมต้องการใบเสร็จ</td><td>Phom tong kan bai set</td><td>I need a receipt</td><td>ผม=I ต้องการ=need ใบเสร็จ=receipt</td></tr>
+        <tr><td>คุณอยากดื่มอะไร?</td><td>Khun yak duem arai?</td><td>What do you want to drink?</td><td>คุณ=you อยาก=want ดื่ม=drink อะไร=what</td></tr>
+        <tr><td>เราอยากอยู่ที่นี่</td><td>Rao yak yu thi ni</td><td>We want to stay here</td><td>เรา=we อยาก=want อยู่=stay ที่นี่=here</td></tr>
+        <tr><td>ผมอยากพูดภาษาไทยได้</td><td>Phom yak phut phasa Thai dai</td><td>I want to be able to speak Thai</td><td>ผม=I อยาก=want พูด=speak ภาษาไทย=Thai-language ได้=can</td></tr>
+        <tr><td>ฉันต้องการแผนที่</td><td>Chan tong kan phaen thi</td><td>I need a map</td><td>ฉัน=I ต้องการ=need แผนที่=map</td></tr>
+        <tr><td>เขาไม่อยากกลับบ้าน</td><td>Khao mai yak klap ban</td><td>He doesn't want to go home</td><td>เขา=he ไม่อยาก=doesn't-want กลับ=return บ้าน=home</td></tr>
+        <tr><td>ผมอยากลองอาหารใหม่</td><td>Phom yak long ahan mai</td><td>I want to try new food</td><td>ผม=I อยาก=want ลอง=try อาหาร=food ใหม่=new</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Structure 3 -->
+  <div class="structure-block">
+    <div class="structure-header">
+      <div class="structure-icon">❤️</div>
+      <div class="structure-header-text">
+        <h3>Structure 3 — "I like / I don't like"</h3>
+        <p>Express preferences, opinions, taste</p>
+      </div>
+    </div>
+    <div style="padding:16px 0 0">
+      <div class="formula-bar">✦ Subject + ชอบ (chop) + noun/verb → "like"</div>
+      <div class="formula-bar" style="margin-top:8px;">✦ Subject + ไม่ชอบ (mai chop) + noun/verb → "don't like"</div>
+    </div>
+    <table class="phrase-table">
+      <thead><tr><th>Thai</th><th>Phonetic</th><th>English</th><th>Word-by-Word</th></tr></thead>
+      <tbody>
+        <tr><td>ผมชอบอาหารไทย</td><td>Phom chop ahan Thai</td><td>I like Thai food</td><td>ผม=I ชอบ=like อาหาร=food ไทย=Thai</td></tr>
+        <tr><td>ฉันไม่ชอบเผ็ด</td><td>Chan mai chop phet</td><td>I don't like spicy</td><td>ฉัน=I ไม่ชอบ=don't-like เผ็ด=spicy</td></tr>
+        <tr><td>คุณชอบอะไร?</td><td>Khun chop arai?</td><td>What do you like?</td><td>คุณ=you ชอบ=like อะไร=what</td></tr>
+        <tr><td>ชอบมากเลย</td><td>Chop mak loei</td><td>I really like it</td><td>ชอบ=like มาก=very เลย=indeed</td></tr>
+        <tr><td>เขาชอบดูฟุตบอล</td><td>Khao chop du futbon</td><td>He likes watching football</td><td>เขา=he ชอบ=likes ดู=watch ฟุตบอล=football</td></tr>
+        <tr><td>ฉันชอบอากาศที่นี่</td><td>Chan chop akat thi ni</td><td>I like the weather here</td><td>ฉัน=I ชอบ=like อากาศ=weather ที่นี่=here</td></tr>
+        <tr><td>ผมไม่ชอบกาแฟ</td><td>Phom mai chop kafae</td><td>I don't like coffee</td><td>ผม=I ไม่ชอบ=don't-like กาแฟ=coffee</td></tr>
+        <tr><td>เธอชอบอ่านหนังสือ</td><td>Thoe chop an nangsu</td><td>She likes reading books</td><td>เธอ=she ชอบ=likes อ่าน=read หนังสือ=book</td></tr>
+        <tr><td>ผมชอบเมืองไทยมาก</td><td>Phom chop mueang Thai mak</td><td>I like Thailand very much</td><td>ผม=I ชอบ=like เมืองไทย=Thailand มาก=very-much</td></tr>
+        <tr><td>คุณชอบดนตรีไหม?</td><td>Khun chop dontri mai?</td><td>Do you like music?</td><td>คุณ=you ชอบ=like ดนตรี=music ไหม=question-particle</td></tr>
+        <tr><td>ฉันไม่ชอบรถติด</td><td>Chan mai chop rot tit</td><td>I don't like traffic jams</td><td>ฉัน=I ไม่ชอบ=don't-like รถ=car ติด=stuck</td></tr>
+        <tr><td>เราชอบอยู่ที่นี่</td><td>Rao chop yu thi ni</td><td>We like being here</td><td>เรา=we ชอบ=like อยู่=be/stay ที่นี่=here</td></tr>
+        <tr><td>ผมชอบเดินเล่น</td><td>Phom chop doen len</td><td>I like walking around</td><td>ผม=I ชอบ=like เดิน=walk เล่น=play/around</td></tr>
+        <tr><td>เขาไม่ชอบผัก</td><td>Khao mai chop phak</td><td>He doesn't like vegetables</td><td>เขา=he ไม่ชอบ=doesn't-like ผัก=vegetables</td></tr>
+        <tr><td>ฉันชอบทะเล</td><td>Chan chop thale</td><td>I like the sea</td><td>ฉัน=I ชอบ=like ทะเล=sea</td></tr>
+        <tr><td>คุณชอบกินอะไร?</td><td>Khun chop gin arai?</td><td>What do you like to eat?</td><td>คุณ=you ชอบ=like กิน=eat อะไร=what</td></tr>
+        <tr><td>ผมชอบอากาศเย็น</td><td>Phom chop akat yen</td><td>I like cool weather</td><td>ผม=I ชอบ=like อากาศ=weather เย็น=cool/cold</td></tr>
+        <tr><td>ฉันไม่ชอบตื่นเช้า</td><td>Chan mai chop tuen chao</td><td>I don't like waking up early</td><td>ฉัน=I ไม่ชอบ=don't-like ตื่น=wake-up เช้า=morning/early</td></tr>
+        <tr><td>เธอชอบสีอะไร?</td><td>Thoe chop si arai?</td><td>What color does she like?</td><td>เธอ=she ชอบ=likes สี=color อะไร=what</td></tr>
+        <tr><td>ผมชอบอาหารญี่ปุ่นก็ได้</td><td>Phom chop ahan Yipun ko dai</td><td>I also like Japanese food</td><td>ผม=I ชอบ=like อาหาร=food ญี่ปุ่น=Japanese ก็ได้=also/too</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Structure 4 -->
+  <div class="structure-block">
+    <div class="structure-header">
+      <div class="structure-icon">✅</div>
+      <div class="structure-header-text">
+        <h3>Structure 4 — "Can / Can't"</h3>
+        <p>Express ability, ask for permission, offer help</p>
+      </div>
+    </div>
+    <div style="padding:16px 0 0">
+      <div class="formula-bar">✦ Subject + verb + ได้ (dai) → can do</div>
+      <div class="formula-bar" style="margin-top:8px;">✦ Subject + verb + ไม่ได้ (mai dai) → can't do</div>
+    </div>
+    <table class="phrase-table">
+      <thead><tr><th>Thai</th><th>Phonetic</th><th>English</th><th>Word-by-Word</th></tr></thead>
+      <tbody>
+        <tr><td>ผมพูดภาษาไทยได้นิดหน่อย</td><td>Phom phut phasa Thai dai nit noi</td><td>I can speak a little Thai</td><td>ผม=I พูด=speak ภาษาไทย=Thai-language ได้=can นิดหน่อย=a-little</td></tr>
+        <tr><td>ผมพูดภาษาไทยไม่ได้</td><td>Phom phut phasa Thai mai dai</td><td>I can't speak Thai</td><td>ผม=I พูด=speak ภาษาไทย=Thai-language ไม่ได้=can't</td></tr>
+        <tr><td>คุณพูดภาษาอังกฤษได้ไหม?</td><td>Khun phut phasa Angkrit dai mai?</td><td>Can you speak English?</td><td>คุณ=you พูด=speak ภาษาอังกฤษ=English ได้=can ไหม=question-particle</td></tr>
+        <tr><td>ช่วยผมได้ไหม?</td><td>Chuay phom dai mai?</td><td>Can you help me?</td><td>ช่วย=help ผม=me ได้=can ไหม=question-particle</td></tr>
+        <tr><td>ฉันขับรถได้</td><td>Chan khap rot dai</td><td>I can drive</td><td>ฉัน=I ขับ=drive รถ=car ได้=can</td></tr>
+        <tr><td>เขาว่ายน้ำไม่ได้</td><td>Khao wai nam mai dai</td><td>He can't swim</td><td>เขา=he ว่าย=swim น้ำ=water ไม่ได้=can't</td></tr>
+        <tr><td>ผมจ่ายด้วยบัตรได้ไหม?</td><td>Phom jai duay bat dai mai?</td><td>Can I pay by card?</td><td>ผม=I จ่าย=pay ด้วย=with บัตร=card ได้=can ไหม=question-particle</td></tr>
+        <tr><td>คุณมาพรุ่งนี้ได้ไหม?</td><td>Khun ma phrung ni dai mai?</td><td>Can you come tomorrow?</td><td>คุณ=you มา=come พรุ่งนี้=tomorrow ได้=can ไหม=question-particle</td></tr>
+        <tr><td>ผมถ่ายรูปที่นี่ได้ไหม?</td><td>Phom thai rup thi ni dai mai?</td><td>Can I take photos here?</td><td>ผม=I ถ่ายรูป=take-photo ที่นี่=here ได้=can ไหม=question-particle</td></tr>
+        <tr><td>เธอร้องเพลงได้ดีมาก</td><td>Thoe rong phleng dai di mak</td><td>She can sing very well</td><td>เธอ=she ร้องเพลง=sing ได้=can ดี=well มาก=very</td></tr>
+        <tr><td>ฉันกินเผ็ดได้</td><td>Chan gin phet dai</td><td>I can eat spicy food</td><td>ฉัน=I กิน=eat เผ็ด=spicy ได้=can</td></tr>
+        <tr><td>ผมนอนไม่ได้</td><td>Phom non mai dai</td><td>I can't sleep</td><td>ผม=I นอน=sleep ไม่ได้=can't</td></tr>
+        <tr><td>คุณรอได้ไหม?</td><td>Khun ro dai mai?</td><td>Can you wait?</td><td>คุณ=you รอ=wait ได้=can ไหม=question-particle</td></tr>
+        <tr><td>เราเข้าได้ไหม?</td><td>Rao khao dai mai?</td><td>Can we enter?</td><td>เรา=we เข้า=enter ได้=can ไหม=question-particle</td></tr>
+        <tr><td>ผมเปลี่ยนห้องได้ไหม?</td><td>Phom plian hong dai mai?</td><td>Can I change rooms?</td><td>ผม=I เปลี่ยน=change ห้อง=room ได้=can ไหม=question-particle</td></tr>
+        <tr><td>เขาทำอาหารไม่ได้</td><td>Khao tham ahan mai dai</td><td>He can't cook</td><td>เขา=he ทำ=make อาหาร=food ไม่ได้=can't</td></tr>
+        <tr><td>ฉันไปด้วยได้ไหม?</td><td>Chan pai duay dai mai?</td><td>Can I come along?</td><td>ฉัน=I ไป=go ด้วย=together ได้=can ไหม=question-particle</td></tr>
+        <tr><td>คุณส่งอีเมลได้ไหม?</td><td>Khun song email dai mai?</td><td>Can you send an email?</td><td>คุณ=you ส่ง=send อีเมล=email ได้=can ไหม=question-particle</td></tr>
+        <tr><td>ผมใช้โทรศัพท์ได้ไหม?</td><td>Phom chai thrasap dai mai?</td><td>Can I use the phone?</td><td>ผม=I ใช้=use โทรศัพท์=phone ได้=can ไหม=question-particle</td></tr>
+        <tr><td>เธออ่านภาษาไทยได้</td><td>Thoe an phasa Thai dai</td><td>She can read Thai</td><td>เธอ=she อ่าน=read ภาษาไทย=Thai-language ได้=can</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Structure 5 -->
+  <div class="structure-block">
+    <div class="structure-header">
+      <div class="structure-icon">❓</div>
+      <div class="structure-header-text">
+        <h3>Structure 5 — Question Words</h3>
+        <p>These go at the END of the sentence in Thai (unlike English)</p>
+      </div>
+    </div>
+    <div style="padding:16px 0 8px">
+      <div class="formula-bar">✦ In Thai, question words come at the END: คุณชื่ออะไร? = You name what? = What's your name?</div>
+    </div>
+    <div style="padding:16px 28px 24px; display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px;">
+      <div style="background:var(--cream2);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:20px;font-weight:700;margin-bottom:4px;">อะไร</div>
+        <div style="font-size:12px;color:var(--gold);margin-bottom:4px;">arai</div>
+        <div style="font-size:13px;color:var(--text-secondary);">What?</div>
+      </div>
+      <div style="background:var(--cream2);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:20px;font-weight:700;margin-bottom:4px;">ที่ไหน</div>
+        <div style="font-size:12px;color:var(--gold);margin-bottom:4px;">thi nai</div>
+        <div style="font-size:13px;color:var(--text-secondary);">Where?</div>
+      </div>
+      <div style="background:var(--cream2);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:20px;font-weight:700;margin-bottom:4px;">ใคร</div>
+        <div style="font-size:12px;color:var(--gold);margin-bottom:4px;">khai</div>
+        <div style="font-size:13px;color:var(--text-secondary);">Who?</div>
+      </div>
+      <div style="background:var(--cream2);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:20px;font-weight:700;margin-bottom:4px;">เมื่อไหร่</div>
+        <div style="font-size:12px;color:var(--gold);margin-bottom:4px;">muea rai</div>
+        <div style="font-size:13px;color:var(--text-secondary);">When?</div>
+      </div>
+      <div style="background:var(--cream2);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:20px;font-weight:700;margin-bottom:4px;">เท่าไหร่</div>
+        <div style="font-size:12px;color:var(--gold);margin-bottom:4px;">thao rai</div>
+        <div style="font-size:13px;color:var(--text-secondary);">How much?</div>
+      </div>
+      <div style="background:var(--cream2);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:20px;font-weight:700;margin-bottom:4px;">ทำไม</div>
+        <div style="font-size:12px;color:var(--gold);margin-bottom:4px;">tham mai</div>
+        <div style="font-size:13px;color:var(--text-secondary);">Why?</div>
+      </div>
+      <div style="background:var(--cream2);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:20px;font-weight:700;margin-bottom:4px;">ยังไง</div>
+        <div style="font-size:12px;color:var(--gold);margin-bottom:4px;">yang ngai</div>
+        <div style="font-size:13px;color:var(--text-secondary);">How?</div>
+      </div>
+      <div style="background:var(--cream2);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:20px;font-weight:700;margin-bottom:4px;">กี่</div>
+        <div style="font-size:12px;color:var(--gold);margin-bottom:4px;">ki</div>
+        <div style="font-size:13px;color:var(--text-secondary);">How many?</div>
+      </div>
+    </div>
+    <table class="phrase-table">
+      <thead><tr><th>Thai</th><th>Phonetic</th><th>English</th><th>Word-by-Word</th></tr></thead>
+      <tbody>
+        <tr><td>คุณชื่ออะไร?</td><td>Khun chue arai?</td><td>What is your name?</td><td>คุณ=you ชื่อ=name อะไร=what</td></tr>
+        <tr><td>ห้องน้ำอยู่ที่ไหน?</td><td>Hong nam yu thi nai?</td><td>Where is the bathroom?</td><td>ห้องน้ำ=bathroom อยู่=is ที่ไหน=where</td></tr>
+        <tr><td>คนนั้นเป็นใคร?</td><td>Khon nan pen khrai?</td><td>Who is that person?</td><td>คน=person นั้น=that เป็น=is ใคร=who</td></tr>
+        <tr><td>รถไฟออกเมื่อไหร่?</td><td>Rot fai ok muea rai?</td><td>When does the train leave?</td><td>รถไฟ=train ออก=depart เมื่อไหร่=when</td></tr>
+        <tr><td>อันนี้เท่าไหร่?</td><td>An ni thao rai?</td><td>How much is this?</td><td>อัน=item นี้=this เท่าไหร่=how-much</td></tr>
+        <tr><td>คุณมาที่นี่ทำไม?</td><td>Khun ma thi ni tham mai?</td><td>Why did you come here?</td><td>คุณ=you มา=come ที่นี่=here ทำไม=why</td></tr>
+        <tr><td>ไปสนามบินยังไง?</td><td>Pai sanam bin yang ngai?</td><td>How do I get to the airport?</td><td>ไป=go สนามบิน=airport ยังไง=how</td></tr>
+        <tr><td>คุณอายุเท่าไหร่?</td><td>Khun ayu thao rai?</td><td>How old are you?</td><td>คุณ=you อายุ=age เท่าไหร่=how-much</td></tr>
+        <tr><td>คุณกินอะไร?</td><td>Khun gin arai?</td><td>What are you eating?</td><td>คุณ=you กิน=eat อะไร=what</td></tr>
+        <tr><td>ร้านอาหารอยู่ที่ไหน?</td><td>Ran ahan yu thi nai?</td><td>Where is the restaurant?</td><td>ร้านอาหาร=restaurant อยู่=is ที่ไหน=where</td></tr>
+        <tr><td>นี่เป็นของใคร?</td><td>Ni pen khong khrai?</td><td>Whose is this?</td><td>นี่=this เป็น=is ของ=of ใคร=who</td></tr>
+        <tr><td>คุณจะกลับเมื่อไหร่?</td><td>Khun ja klap muea rai?</td><td>When will you return?</td><td>คุณ=you จะ=will กลับ=return เมื่อไหร่=when</td></tr>
+        <tr><td>มีห้องว่างกี่ห้อง?</td><td>Mi hong wang ki hong?</td><td>How many rooms are available?</td><td>มี=have ห้องว่าง=available-room กี่=how-many ห้อง=room</td></tr>
+        <tr><td>ทำไมคุณไม่มา?</td><td>Tham mai khun mai ma?</td><td>Why didn't you come?</td><td>ทำไม=why คุณ=you ไม่มา=not-come</td></tr>
+        <tr><td>คุณมาจากที่ไหน?</td><td>Khun ma jak thi nai?</td><td>Where are you from?</td><td>คุณ=you มา=come จาก=from ที่ไหน=where</td></tr>
+        <tr><td>อาหารอะไรอร่อยที่สุด?</td><td>Ahan arai aroi thi sut?</td><td>Which food is the most delicious?</td><td>อาหาร=food อะไร=what อร่อย=delicious ที่สุด=most</td></tr>
+        <tr><td>คุณทำงานอะไร?</td><td>Khun tham ngan arai?</td><td>What do you do for work?</td><td>คุณ=you ทำ=do งาน=work อะไร=what</td></tr>
+        <tr><td>เขามาทำไม?</td><td>Khao ma tham mai?</td><td>Why did he come?</td><td>เขา=he มา=come ทำไม=why</td></tr>
+        <tr><td>คุณต้องการกี่ชิ้น?</td><td>Khun tong kan ki chin?</td><td>How many pieces do you need?</td><td>คุณ=you ต้องการ=need กี่=how-many ชิ้น=piece</td></tr>
+        <tr><td>แท็กซี่ไปสนามบินเท่าไหร่?</td><td>Taxi pai sanam bin thao rai?</td><td>How much is a taxi to the airport?</td><td>แท็กซี่=taxi ไป=go สนามบิน=airport เท่าไหร่=how-much</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Structure 6 -->
+  <div class="structure-block">
+    <div class="structure-header">
+      <div class="structure-icon">⏰</div>
+      <div class="structure-header-text">
+        <h3>Structure 6 — Past, Present, Future</h3>
+        <p>No verb changes. Just add a time marker before or after the verb.</p>
+      </div>
+    </div>
+    <table class="phrase-table">
+      <thead><tr><th>Time</th><th>Thai</th><th>Phonetic</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Already (past)</td><td>แล้ว</td><td>laeo</td><td>กินแล้ว = already ate</td></tr>
+        <tr><td>Just now</td><td>เพิ่ง</td><td>phoeng</td><td>เพิ่งมา = just arrived</td></tr>
+        <tr><td>Right now</td><td>กำลัง</td><td>gamlang</td><td>กำลังกิน = eating now</td></tr>
+        <tr><td>Will (future)</td><td>จะ</td><td>ja</td><td>จะไป = will go</td></tr>
+        <tr><td>Yesterday</td><td>เมื่อวาน</td><td>muea wan</td><td>เมื่อวานไป = went yesterday</td></tr>
+        <tr><td>Tomorrow</td><td>พรุ่งนี้</td><td>phrung ni</td><td>พรุ่งนี้จะไป = will go tomorrow</td></tr>
+      </tbody>
+    </table>
+    <table class="phrase-table" style="margin-top:1px;">
+      <thead><tr><th>Time Marker</th><th>Thai</th><th>Phonetic</th><th>English</th><th>Word-by-Word</th></tr></thead>
+      <tbody>
+        <tr><td>แล้ว</td><td>กินข้าวแล้ว</td><td>Gin khao laeo</td><td>Already ate</td><td>กิน=eat ข้าว=rice แล้ว=already</td></tr>
+        <tr><td>แล้ว</td><td>ไปแล้ว</td><td>Pai laeo</td><td>Already went</td><td>ไป=go แล้ว=already</td></tr>
+        <tr><td>เพิ่ง</td><td>เพิ่งมาถึง</td><td>Phoeng ma thueng</td><td>Just arrived</td><td>เพิ่ง=just มา=come ถึง=reach/arrive</td></tr>
+        <tr><td>เพิ่ง</td><td>เพิ่งกินข้าว</td><td>Phoeng gin khao</td><td>Just ate</td><td>เพิ่ง=just กิน=eat ข้าว=rice</td></tr>
+        <tr><td>กำลัง</td><td>กำลังกิน</td><td>Gamlang gin</td><td>Currently eating</td><td>กำลัง=currently กิน=eating</td></tr>
+        <tr><td>กำลัง</td><td>กำลังรอ</td><td>Gamlang ro</td><td>Currently waiting</td><td>กำลัง=currently รอ=waiting</td></tr>
+        <tr><td>จะ</td><td>จะไปพรุ่งนี้</td><td>Ja pai phrung ni</td><td>Will go tomorrow</td><td>จะ=will ไป=go พรุ่งนี้=tomorrow</td></tr>
+        <tr><td>จะ</td><td>จะกินอะไร?</td><td>Ja gin arai?</td><td>What will you eat?</td><td>จะ=will กิน=eat อะไร=what</td></tr>
+        <tr><td>เมื่อวาน</td><td>เมื่อวานไปตลาด</td><td>Muea wan pai talat</td><td>Went to the market yesterday</td><td>เมื่อวาน=yesterday ไป=go ตลาด=market</td></tr>
+        <tr><td>เมื่อวาน</td><td>เมื่อวานฝนตก</td><td>Muea wan fon tok</td><td>It rained yesterday</td><td>เมื่อวาน=yesterday ฝน=rain ตก=fall</td></tr>
+        <tr><td>พรุ่งนี้</td><td>พรุ่งนี้จะไปทะเล</td><td>Phrung ni ja pai thale</td><td>Tomorrow will go to the sea</td><td>พรุ่งนี้=tomorrow จะ=will ไป=go ทะเล=sea</td></tr>
+        <tr><td>พรุ่งนี้</td><td>พรุ่งนี้คุณว่าง?</td><td>Phrung ni khun wang?</td><td>Are you free tomorrow?</td><td>พรุ่งนี้=tomorrow คุณ=you ว่าง=free</td></tr>
+        <tr><td>แล้ว</td><td>นอนหลับแล้ว</td><td>Non lap laeo</td><td>Already asleep</td><td>นอน=sleep หลับ=asleep แล้ว=already</td></tr>
+        <tr><td>กำลัง</td><td>กำลังเดินทาง</td><td>Gamlang doen thang</td><td>Currently traveling</td><td>กำลัง=currently เดิน=walk ทาง=way/road</td></tr>
+        <tr><td>จะ</td><td>จะโทรหาคุณ</td><td>Ja tho ha khun</td><td>Will call you</td><td>จะ=will โทร=call หา=find/contact คุณ=you</td></tr>
+        <tr><td>เพิ่ง</td><td>เพิ่งตื่น</td><td>Phoeng tuen</td><td>Just woke up</td><td>เพิ่ง=just ตื่น=wake-up</td></tr>
+        <tr><td>เมื่อกี้</td><td>เมื่อกี้พูดอะไร?</td><td>Muea ki phut arai?</td><td>What did you just say?</td><td>เมื่อกี้=just-now พูด=speak อะไร=what</td></tr>
+        <tr><td>กำลัง</td><td>กำลังทำงาน</td><td>Gamlang tham ngan</td><td>Currently working</td><td>กำลัง=currently ทำ=do งาน=work</td></tr>
+        <tr><td>จะ</td><td>จะกลับบ้านกี่โมง?</td><td>Ja klap ban ki mong?</td><td>What time will you go home?</td><td>จะ=will กลับ=return บ้าน=home กี่โมง=what-time</td></tr>
+        <tr><td>แล้ว</td><td>ทำเสร็จแล้ว</td><td>Tham set laeo</td><td>Already finished</td><td>ทำ=do เสร็จ=finish แล้ว=already</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SURVIVAL PHRASES -->
+<div class="section">
+  <div class="section-label">Phrase Bank</div>
+  <div class="section-title">Essential Phrases<br>for Every Situation</div>
+  <p class="section-desc">These phrases will carry you through 90% of everyday interactions. Learn them all by the end of Week 2.</p>
+
+  <div class="phrase-bank-grid">
+    <div class="phrase-bank-card">
+      <div class="card-title"><span class="dot"></span>Greetings &amp; Introductions</div>
+      <table class="phrase-table">
+        <tbody>
+          <tr><td>สวัสดีครับ/ค่ะ</td><td>Sawatdee khrap/kha</td><td>Hello</td></tr>
+          <tr><td>ยินดีที่ได้รู้จัก</td><td>Yin dee thi dai ru jak</td><td>Nice to meet you</td></tr>
+          <tr><td>ผมชื่อ... / ฉันชื่อ...</td><td>Phom / Chan chue...</td><td>My name is...</td></tr>
+          <tr><td>คุณชื่ออะไร?</td><td>Khun chue arai?</td><td>What's your name?</td></tr>
+          <tr><td>คุณมาจากไหน?</td><td>Khun ma jak nai?</td><td>Where are you from?</td></tr>
+          <tr><td>ผมมาจากอังกฤษ</td><td>Phom ma jak Angkrit</td><td>I'm from England</td></tr>
+          <tr><td>แล้วพบกันใหม่</td><td>Laeo phop gan mai</td><td>See you again</td></tr>
+          <tr><td>ลาก่อนครับ</td><td>La kon khrap</td><td>Goodbye</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="phrase-bank-card">
+      <div class="card-title"><span class="dot"></span>Polite &amp; Essential</div>
+      <table class="phrase-table">
+        <tbody>
+          <tr><td>ขอบคุณครับ/ค่ะ</td><td>Khop khun khrap/kha</td><td>Thank you</td></tr>
+          <tr><td>ขอโทษครับ/ค่ะ</td><td>Kho thot khrap/kha</td><td>Sorry / Excuse me</td></tr>
+          <tr><td>ไม่เป็นไร</td><td>Mai pen rai</td><td>No problem / It's okay</td></tr>
+          <tr><td>ได้ครับ</td><td>Dai khrap</td><td>Yes / Okay</td></tr>
+          <tr><td>ไม่เข้าใจครับ</td><td>Mai khao jai khrap</td><td>I don't understand</td></tr>
+          <tr><td>พูดช้าๆ ได้ไหม?</td><td>Phut cha cha dai mai?</td><td>Can you speak slowly?</td></tr>
+          <tr><td>พูดซ้ำได้ไหม?</td><td>Phut sam dai mai?</td><td>Can you repeat that?</td></tr>
+          <tr><td>ช่วยผมได้ไหม?</td><td>Chuay phom dai mai?</td><td>Can you help me?</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="phrase-bank-card">
+      <div class="card-title"><span class="dot"></span>Shopping &amp; Prices</div>
+      <table class="phrase-table">
+        <tbody>
+          <tr><td>เท่าไหร่?</td><td>Thao rai?</td><td>How much?</td></tr>
+          <tr><td>แพงไปครับ</td><td>Phaeng pai khrap</td><td>Too expensive</td></tr>
+          <tr><td>ลดราคาได้ไหม?</td><td>Lot rakha dai mai?</td><td>Can you lower the price?</td></tr>
+          <tr><td>มีไหม?</td><td>Mi mai?</td><td>Do you have it?</td></tr>
+          <tr><td>ไม่มี</td><td>Mai mi</td><td>Don't have / There isn't</td></tr>
+          <tr><td>เอา...</td><td>Ao...</td><td>I'll take... / I want...</td></tr>
+          <tr><td>ไม่เอา</td><td>Mai ao</td><td>I don't want it</td></tr>
+          <tr><td>จ่ายด้วยบัตรได้ไหม?</td><td>Jai duay bat dai mai?</td><td>Can I pay by card?</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="phrase-bank-card">
+      <div class="card-title"><span class="dot"></span>Food &amp; Restaurants</div>
+      <table class="phrase-table">
+        <tbody>
+          <tr><td>อร่อยมาก</td><td>Aroi mak</td><td>Very delicious</td></tr>
+          <tr><td>เผ็ดมาก</td><td>Phet mak</td><td>Very spicy</td></tr>
+          <tr><td>ไม่เผ็ดครับ</td><td>Mai phet khrap</td><td>Not spicy please</td></tr>
+          <tr><td>ไม่ใส่ผักชี</td><td>Mai sai phak chi</td><td>No coriander</td></tr>
+          <tr><td>สั่งอาหารได้ไหม?</td><td>Sang ahan dai mai?</td><td>Can I order?</td></tr>
+          <tr><td>เก็บเงินด้วยครับ</td><td>Kep ngoen duay khrap</td><td>Check please</td></tr>
+          <tr><td>มังสวิรัติ</td><td>Mangsawirat</td><td>Vegetarian</td></tr>
+          <tr><td>อิ่มแล้วครับ</td><td>Im laeo khrap</td><td>I'm full</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<footer>
+  <div class="footer-nav">
+    <a href="part1-roadmap.html">Roadmap</a>
+    <a href="part2-foundations.html">Foundations</a>
+    <a href="part3-conversations.html">Conversations</a>
+    <a href="part4-1000words.html">1000 Words</a>
+    <a href="part5-daily.html">Daily Practice</a>
+  </div>
+  <p>Thai Language Learning Guide · Designed for rapid conversational fluency</p>
+</footer>
+
+</body>
+</html>
